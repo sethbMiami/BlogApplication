@@ -1,3 +1,4 @@
+using BlogApplication;
 using BlogApplication.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,8 +13,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddAuthentication()
     .AddGoogle(options =>
     {
-        options.ClientId = "19665579777-i7pq7dcaourli4i46dcp36172q6tsp9r.apps.googleusercontent.com";
-        options.ClientSecret = "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";
+        options.ClientId = builder.Configuration.GetGoogleClientId();
+        options.ClientSecret = builder.Configuration.GetGoogleClientSecret();
     });
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();

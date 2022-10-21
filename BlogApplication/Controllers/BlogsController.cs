@@ -26,6 +26,12 @@ namespace BlogApplication.Controllers
               return View(await _context.Blog.ToListAsync());
         }
 
+        // GET: Blogs/SpecialTea
+        public async Task<IActionResult> SpecialTea()
+        {
+            return View();
+        }
+
         // GET: Blogs/ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()
         {
