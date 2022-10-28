@@ -8,12 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using BlogApplication.Data;
 using BlogApplication.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BlogApplication.Controllers
 {
     public class BlogsController : Controller
     {
         private readonly ApplicationDbContext _context;
+
 
         public BlogsController(ApplicationDbContext context)
         {
@@ -75,7 +77,7 @@ namespace BlogApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Author,Title,BlogContent,CreatedDateTime")] Blog blog)
+        public async Task<IActionResult> Create([Bind("Id,Author,Title,Subheading,BlogContent,CreatedDateTime,BlogImage")] Blog blog)
         {
             if (ModelState.IsValid)
             {
@@ -85,6 +87,7 @@ namespace BlogApplication.Controllers
             }
             return View(blog);
         }
+
 
         // GET: Blogs/Edit/5
         [Authorize]
@@ -108,7 +111,7 @@ namespace BlogApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Author,Title,BlogContent,CreatedDateTime")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Author,Title,Subheading,BlogContent,CreatedDateTime,BlogImage")] Blog blog)
         {
             if (id != blog.Id)
             {

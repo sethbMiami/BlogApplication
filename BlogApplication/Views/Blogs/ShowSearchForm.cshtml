@@ -1,5 +1,10 @@
-﻿
-<h4>Search for a Blog</h4>
+﻿@model BlogApplication.Models.Blog
+
+@{
+    ViewData["Title"] = "Search";
+}
+<body>
+    <h4>Search for a Blog</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -8,13 +13,11 @@
                 <label for="SearchPhrase" class="control-label"></label>
                 <input name="SearchPhrase" class="form-control" style="background-color:white"/>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top:20px;">
                 <input type="submit" value="Search" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
+</body>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>

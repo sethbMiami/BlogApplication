@@ -18,9 +18,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.BlogContent)
-            </th>*@
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreatedDateTime)
             </th>
@@ -36,15 +36,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            @*<td>
+            <td>
                 @Html.DisplayFor(modelItem => item.BlogContent)
-            </td>*@
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedDateTime)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <img src="@item.BlogImage"/>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>

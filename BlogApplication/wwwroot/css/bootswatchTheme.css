@@ -1158,7 +1158,7 @@ progress {
 
     .row-cols-md-4 > * {
         flex: 0 0 auto;
-        width: 25%;
+        width: 100%;
     }
 
     .row-cols-md-5 > * {
@@ -1193,7 +1193,7 @@ progress {
 
     .col-md-4 {
         flex: 0 0 auto;
-        width: 33.33333333%;
+        width: 100%;
     }
 
     .col-md-5 {
@@ -2255,7 +2255,7 @@ progress {
     overflow: hidden;
 }
 
-    .form-control[type=file]:not(:disabled):not([readonly]) {
+    .form-control[type=file]:not([:disabled]):not([readonly]) {
         cursor: pointer;
     }
 
@@ -11627,7 +11627,7 @@ blockquote {
     right: 0;
     z-index: 1030;
     border-bottom: 1px solid #dee2e6;
-    background-color: #fff;
+    background-color: #0dcaf0;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -11652,7 +11652,7 @@ blockquote {
 @media (min-width: 992px) {
     #mainNav {
         border-bottom: 1px solid transparent;
-        background: transparent;
+        /*background: transparent;*/
     }
 
         #mainNav .navbar-brand {
