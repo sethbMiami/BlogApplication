@@ -24,6 +24,11 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Subheading" class="control-label"></label>
+                <input asp-for="Subheading" class="form-control" />
+                <span asp-validation-for="Subheading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="BlogContent" class="control-label"></label>
                 <input asp-for="BlogContent" class="form-control" />
                 <span asp-validation-for="BlogContent" class="text-danger"></span>
@@ -33,7 +38,18 @@
                 <input asp-for="CreatedDateTime" class="form-control" />
                 <span asp-validation-for="CreatedDateTime" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
+                <div class="form-group">
+                  <label for="formFile" class="form-label"></label>
+                  <input asp-for="BlogImage" type="hidden"/>
+                       <input class="form-control"  type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event, this);">
+                       <div class="preview">
+                            <img id="file-ip-1-preview" />
+                       </div>
+                      <span asp-validation-for="BlogImage" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:20px;">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

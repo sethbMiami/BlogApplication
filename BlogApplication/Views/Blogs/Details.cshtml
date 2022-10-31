@@ -6,7 +6,46 @@
 
 <h1>Details</h1>
 
-<div>
+    <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>@Html.DisplayFor(model => model.Title)</h1>
+                        <h2 class="subheading">@Html.DisplayFor(model => model.Subheading)</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">@Html.DisplayFor(model => model.Author)</a>
+                            on August 24, 2022
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p>@Html.DisplayFor(model => model.BlogContent)</p>
+                    <h2 class="section-heading">Beta (add to model?)</h2>
+                    <blockquote class="blockquote">Beta - (add to model or hardcode?)</blockquote>
+                    <h2 class="section-heading">Beta (build out the blog template creator) </h2>
+                    <a href="#!"><img class="img-fluid" src="@Html.DisplayFor(model => model.BlogImage)" alt="..." /></a>
+                    <span class="caption text-muted">Beta - add image title/description</span>
+                    <p>
+                        Placeholder text by
+                        <a href="http://spaceipsum.com/">Link here</a>
+                        &middot; Images by
+                        <a href="https://www.flickr.com/photos/nasacommons/">Extra words ...</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+@*<div>
     <h4>Blog</h4>
     <hr />
     <dl class="row">
@@ -35,7 +74,7 @@
             @Html.DisplayFor(model => model.CreatedDateTime)
         </dd>
     </dl>
-</div>
+</div>*@
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
