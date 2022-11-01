@@ -654,8 +654,8 @@ progress {
 .container-md,
 .container-sm {
     width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
+    /*padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);*/
     margin-right: auto;
     margin-left: auto;
 }
@@ -11630,7 +11630,7 @@ blockquote {
     right: 0;
     z-index: 1030;
     border-bottom: 1px solid #dee2e6;
-    background-color: #0dcaf0;
+    background-color: #1d1d1f;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -11739,7 +11739,7 @@ header.masthead {
         right: 0;
         bottom: 0;
         background-color: #212529;
-        opacity: 0.5;
+        opacity: .2;
     }
 
     header.masthead .page-heading,
@@ -11748,8 +11748,17 @@ header.masthead {
         color: #fff;
     }
 
-    .site-heading:hover {
-        color: white;
+    @keyframes slideInFromTop{
+        0% {
+               transform: translateY(-100%);
+           }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .site-heading {
+        animation: 2s ease-out 0s 1 slideInFromTop;
     }
 
     header.masthead .page-heading,
@@ -11757,10 +11766,14 @@ header.masthead {
         text-align: center;
     }
 
-        header.masthead .page-heading h1, header.masthead .page-heading .h1,
-        header.masthead .site-heading h1,
-        header.masthead .site-heading .h1 {
-            font-size: 3rem;
+        header.masthead .page-heading:hover,
+        header.masthead .site-heading:hover {
+            text-shadow: 4px 4px 16px #9d48e0;
+        }
+
+        header.masthead .page-heading h1:hover, header.masthead .page-heading .h1:hover,
+        header.masthead .site-heading h1:hover,
+        header.masthead .site-heading .h1:hover {
         }
 
         header.masthead .page-heading .subheading,
@@ -11843,7 +11856,7 @@ header.masthead {
 
     .post-preview > a:focus, .post-preview > a:hover {
         text-decoration: none;
-        color: #0085A1;
+        color: #80742d;
     }
 
     .post-preview > a > .post-title {

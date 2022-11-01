@@ -32,10 +32,15 @@
                             <a class="nav-link text-bg-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-bg-primary" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-bg-primary" asp-area="" asp-controller="Blogs" asp-action="Index">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-bg-primary" asp-area="" asp-controller="Blogs" asp-action="ShowSearchForm">Search</a>
+                            <form asp-controller="Blogs" asp-action="ShowSearchResults">
+                                    <input name="SearchPhrase" class="form-control" placeholder="Search.." style="background-color:white; height:25px; border-radius:15px; margin-top:5px;"/>
+                            </form>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -49,7 +54,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top">
+    <footer class="border-top" style="background-color:#1d1d1f;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">

@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<BlogApplication.Models.Blog>
 
 @{
-    ViewData["Title"] = "Home ";
+    ViewData["Title"] = "Home";
 }
+<h1>@ViewData["Title"]</h1>
 
     <body>
         <!-- Page Header-->
@@ -10,9 +11,9 @@
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading" style="opacity:70%;" style=":hover">
+                        <div class="site-heading" style="border-block-color:white; border-style:solid; padding-bottom:10px;">
                             <h1>Miami's Coffee Blog</h1>
-                            <span class="subheading">Follow along as I explore and taste the unique coffee shops of South Florida</span>
+                            <span class="subheading" style="font-weight:bold;">Follow Along As I Explore The Unique Coffee Shops Of South Florida</span>
                         </div>
                     </div>
                 </div>
@@ -23,12 +24,13 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Reverse())
                 {
                     <div class="post-preview">
                         <a class="post-title" asp-area="" asp-controller="Blogs" asp-action="Details" asp-route-id="@item.Id">
                             <h2 class="post-title">@Html.DisplayFor(modelItem => item.Title)</h2>
                             <h3 class="post-subtitle">@Html.DisplayFor(modelItem => item.Subheading)</h3>
+                        <img src="@Html.DisplayFor(modelItem => item.BlogImage)" style="width:285px; height:auto;"/>
                         </a>
                         <p class="post-meta">
                             Posted by
@@ -40,7 +42,7 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    <div class="d-flex justify-content-end mb-4"><a asp-controller="Blogs" class="btn btn-primary text-uppercase">Older Posts →</a></div>
                 </div>
             </div>
         </div>

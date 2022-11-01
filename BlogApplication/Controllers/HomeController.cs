@@ -28,10 +28,12 @@ namespace BlogApplication.Controllers
         {
             return View(await _context.Blog.ToListAsync());
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+
+        // GET: Home/About
+        public IActionResult About()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
